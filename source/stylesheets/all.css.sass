@@ -1,5 +1,90 @@
 @import "bourbon/bourbon"
 @charset "utf-8"
 
+*
+  +box-sizing (border-box)
 
+@mixin bold-font
+  font-family: "proxima_nova_rgbold"
 
+@mixin reg-font
+  font-family: "proxima_nova_rgregular"
+
++font-face (proxima_nova_rgbold, '/fonts/proxima_nova_bold')
++font-face (proxima_nova_rgregular, '/fonts/proxima_nova_reg')
+
+body
+  +bold-font
+  background: #E2EAEE
+
+ul
+  list-style-type: none
+  padding: 0
+
+.wrapper
+  width: 96%
+  margin: auto
+  // responsive prep
+  max-width: 960px
+  min-width: 960px
+
+header
+  +clearfix
+  +linear-gradient (#E2EAEE, #FCFDFD)
+  +size (100% 50)
+  font-size: 14px
+
+.logo
+  +retina-image (/images/logo, 100%)
+  +size (135 21)
+  +hide-text
+  position: relative
+  top: 15px
+  float: left
+  margin: 0 0 0
+
+.log-in
+  float: right
+
+a
+  color: #4DA5D6
+  text-decoration: none
+
+nav
+  +clearfix
+  float: right
+  width: 80%
+  position: relative
+  top: 18px
+
+  ul
+    float: left
+    margin: 0
+
+nav, footer
+  text-transform: uppercase
+
+  li
+    display: inline-block
+    margin: 0 20px 0 0
+
+  a
+    color: #333
+    opacity: .5
+    text-shadow: 0 1px 0 white
+    +transition (opacity .3s)
+
+    &:hover
+      opacity: 1
+
+.gradient-line
+  +size (100% 5)
+  +linear-gradient (90deg, #8EC649 0%, #24B89B 25%, #1DB0DD 50%, #2D83C4 75%, #902F8F 100%)
+
+footer
+
+.tos
+  float: left
+
+.footer-links
+  float: right
