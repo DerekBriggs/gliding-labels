@@ -1,8 +1,22 @@
 @import "bourbon/bourbon"
 @charset "utf-8"
 
+$purple: #721A71
+$blue: #4DA5D6
+$dark: #333333
+$light-blue: #E2EAEE
+
 *
   +box-sizing (border-box)
+
+@mixin border-radius
+  border-radius: 2px
+
+@mixin border-radius-bottom
+  border-radius: 0 0 2px 2px
+
+@mixin border-radius-top
+  border-radius: 2px 0
 
 @mixin bold-font
   font-family: "proxima_nova_rgbold"
@@ -15,47 +29,72 @@
 
 body
   +bold-font
-  background: #E2EAEE
+  font-size: 16px
+  background: $light-blue
+
+h3
+  +bold-font
+  color: $purple
+  margin: 0 0 15px
+
+p
+  +reg-font
+  line-height: 1.4
+  margin: 0 0 15px
 
 ul
   list-style-type: none
+  margin: 0
   padding: 0
 
 .wrapper
+  +clearfix
   width: 96%
   margin: auto
   // responsive prep
   max-width: 960px
   min-width: 960px
 
+.content
+  +border-radius-bottom
+  box-shadow: 0 1px 3px rgba($dark, .3)
+  background: white
+  padding: 50px
+
 header
   +clearfix
   +linear-gradient (#E2EAEE, #FCFDFD)
-  +size (100% 50)
-  font-size: 14px
+  +size (100% auto)
+  margin: 0 0 50px
+  padding: 15px 0 0
+
+hr
+  height: 1px
+  background: rgba($dark, .2)
+  border: none
+  margin: 25px 0
 
 .logo
   +retina-image (/images/logo, 100%)
   +size (135 21)
   +hide-text
-  position: relative
-  top: 15px
   float: left
-  margin: 0 0 0
+  margin: 0 0 15px
 
 .log-in
   float: right
 
 a
-  color: #4DA5D6
+  color: $blue
   text-decoration: none
+  +bold-font
 
 nav
   +clearfix
   float: right
   width: 80%
   position: relative
-  top: 18px
+  top: 3px
 
   ul
     float: left
@@ -63,13 +102,14 @@ nav
 
 nav, footer
   text-transform: uppercase
+  font-size: 14px
 
   li
     display: inline-block
     margin: 0 20px 0 0
 
   a
-    color: #333
+    color: $dark
     opacity: .5
     text-shadow: 0 1px 0 white
     +transition (opacity .3s)
@@ -82,9 +122,39 @@ nav, footer
   +linear-gradient (90deg, #8EC649 0%, #24B89B 25%, #1DB0DD 50%, #2D83C4 75%, #902F8F 100%)
 
 footer
+  padding: 16px
 
 .tos
   float: left
 
 .footer-links
   float: right
+
+.question
+  margin: 0 0 15px
+
+.back-to-top
+  margin: 0 0 30px
+  display: block
+
+.media-chart
+  +clearfix
+
+  h3
+    text-align: center
+
+.media, .amount
+  width: 48%
+  margin: 0 0 15px
+
+.media
+  margin-right: 1%
+  float: left
+  text-align: right
+
+.amount
+  +reg-font
+  margin-left: 1%
+  text-align: left
+  float: right
+
