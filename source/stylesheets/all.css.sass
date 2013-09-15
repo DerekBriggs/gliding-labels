@@ -1,9 +1,11 @@
 @import "bourbon/bourbon"
 @charset "utf-8"
 
-$purple: #721A71
-$blue: #4DA5D6
-$dark: #333333
+$purple: #731472
+$blue: #00a4e4
+$green: #7ac143
+$link: #4DA5D6
+$dark: #4D4D4D
 $light-blue: #E2EAEE
 
 *
@@ -18,6 +20,9 @@ $light-blue: #E2EAEE
 @mixin border-radius-top
   border-radius: 2px 0
 
+@mixin entypo
+  font-family: "entypo_social"
+
 @mixin bold-font
   font-family: "proxima_nova_rgbold"
 
@@ -26,11 +31,17 @@ $light-blue: #E2EAEE
 
 +font-face (proxima_nova_rgbold, '/fonts/proxima_nova_bold')
 +font-face (proxima_nova_rgregular, '/fonts/proxima_nova_reg')
++font-face (entypo_social, '/fonts/entypo_social')
 
 body
   +bold-font
+  color: $dark
   font-size: 16px
   background: $light-blue
+
+h2
+  color: $purple
+  margin: 20px auto 17px
 
 h3
   +bold-font
@@ -61,6 +72,11 @@ ul
   background: white
   padding: 50px
 
+  p
+
+    &:last-child
+      margin: 0
+
 header
   +clearfix
   +linear-gradient (#E2EAEE, #FCFDFD)
@@ -85,7 +101,7 @@ hr
   float: right
 
 a
-  color: $blue
+  color: $link
   text-decoration: none
   +bold-font
 
@@ -94,6 +110,7 @@ nav
   float: right
   width: 80%
   position: relative
+  font-size: 14px
   top: 3px
 
   ul
@@ -102,11 +119,13 @@ nav
 
 nav, footer
   text-transform: uppercase
-  font-size: 14px
 
   li
     display: inline-block
     margin: 0 20px 0 0
+
+    &:last-child
+      margin: 0
 
   a
     color: $dark
@@ -119,42 +138,128 @@ nav, footer
 
 .gradient-line
   +size (100% 5)
-  +linear-gradient (90deg, #8EC649 0%, #24B89B 25%, #1DB0DD 50%, #2D83C4 75%, #902F8F 100%)
+  +linear-gradient (90deg, $green 0%, $blue 50%, $purple 100%)
 
 footer
   padding: 16px
+  font-size: 10px
+
+.social-media
+  +clearfix
+  float: left
+  margin: 0 0 0 156px
+  font-size: 54px
+
+  a
+    +entypo
+
+  div
+    float: left
+    margin: 0 20px 0 0
 
 .tos
   float: left
+  margin: 30px 0 0 0
 
 .footer-links
   float: right
+  margin: 30px 0 0 0
 
 .question
-  margin: 0 0 15px
+  text-decoration: underline
 
 .back-to-top
-  margin: 0 0 30px
+  margin: 0 0 45px
   display: block
 
-.media-chart
+  &:last-child
+    margin: 0
+
+.chart
   +clearfix
+  margin: 0 0 30px
+
+  &:last-child
+    margin: 0
 
   h3
     text-align: center
+    color: $dark
+
+  p
+    margin: 0
+
+  span
+    font-size: 10px
+    position: relative
+    bottom: 8px
+
 
 .media, .amount
-  width: 48%
+  width: 49%
   margin: 0 0 15px
 
 .media
-  margin-right: 1%
+  margin-right: .5%
   float: left
   text-align: right
 
 .amount
   +reg-font
-  margin-left: 1%
+  margin-left: .5%
   text-align: left
   float: right
 
+.fine-print
+  font-size: 12px
+
+.glen
+  +border-radius
+  float: left
+  width: 150px
+  margin: 0 25px 0 0
+
+.commitment-header
+  +size (100% 445px)
+  +retina-image (/images/commitment_bg, 100%)
+  margin: -50px 0
+  background-repeat: no-repeat
+
+.commitment-chart
+  +clearfix
+  +linear-gradient (#E2EAEE, #FCFDFD)
+  box-shadow: 0 1px 3px rgba($dark, .3)
+
+  h3
+    text-transform: uppercase
+
+.beliefs
+  +clearfix
+
+.belief
+  padding: 50px
+  width: 33.333%
+  float: left
+
+  &:first-child
+    padding: 50px
+    border-right: 1px solid rgba($dark, .2)
+
+  &:last-child
+    padding: 50px
+    border-left: 1px solid rgba($dark, .2)
+
+.tagline
+  +reg-font
+  text-align: center
+  border-top: 1px solid rgba($dark, .2)
+  width: 100%
+
+  span
+    +bold-font
+
+.prices
+  +clearfix
+
+.fee
+  float: left
