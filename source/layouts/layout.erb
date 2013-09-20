@@ -4,6 +4,7 @@
     <meta charset="utf-8">
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device_display, initial-scale=1.0" />
 
     <title><%= current_page.data.title %></title>
 
@@ -12,45 +13,6 @@
   </head>
 
   <body class="<%= page_classes %>">
-    <header>
-      <div class="wrapper">
-        <a href="/index.html"><h1 class="logo">forever</h1></a>
-        <nav>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/commitment.html">Our Commitment</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/pricing.html">Pricing</a></li>
-            <li><a href="/faq.html">FAQ</a></li>
-          </ul>
-          <ul class="log-in">
-            <li><a href="#">Log in</a></li>
-          </ul>
-        </nav>
-      </div>
-    <div class="gradient-line"></div>
-    </header>
-
     <%= yield %>
-
-    <footer>
-      <div class="wrapper">
-        <ul class="tos">
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="/index.html">&copy; 2013 Forever</a></li>
-        </ul>
-        <div class="social-media">
-          <div class="pintrest"><a href="http://pinterest.com/forever/">&#62226;</a></div>
-          <div class="google-plus"><a href="https://plus.google.com/102706234482507094530/posts">&#62223;</a></div>
-          <div class="twitter"><a href="https://twitter.com/forever">&#62217;</a></div>
-        </div>
-        <ul class="footer-links">
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/index.html">Contact Us</a></li>
-          <!-- <li><a href="#">Press</a></li> -->
-        </ul>
-      </div>
-    </footer>
   </body>
 </html>

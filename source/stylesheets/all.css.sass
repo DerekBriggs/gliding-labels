@@ -1,492 +1,145 @@
 @import "bourbon/bourbon"
 @charset "utf-8"
 
-$purple: #731472
-$light-purple: #8c458b
-$blue: #00a4e4
-$red: #e35454
-$green: #7ac143
-$link: #4DA5D6
-$dark: #4D4D4D
-$grey: #d4d4d4
-$dark-grey: #808285
-$light-grey: #E8E8E8
-$light-blue: #E2EAEE
+$timing: .4s
 
 *
   +box-sizing (border-box)
 
-@mixin border-radius
-  border-radius: 2px
-
-@mixin border-radius-bottom
-  border-radius: 0 0 2px 2px
-
-@mixin border-radius-top
-  border-radius: 2px 0
-
-@mixin entypo
-  font-family: "entypo_social"
-
-@mixin bold-font
-  font-family: "proxima_nova_rgbold"
-
-@mixin reg-font
-  font-family: "proxima_nova_rgregular"
-
-+font-face (proxima_nova_rgbold, '/fonts/proxima_nova_bold')
-+font-face (proxima_nova_rgregular, '/fonts/proxima_nova_reg')
-+font-face (entypo_social, '/fonts/entypo_social')
-
 body
-  +retina-image (/images/bg, 50px, jpg)
-  +bold-font
-  color: $dark
-  font-size: 16px
+  background: lightskyblue
 
-h2
-  color: $purple
-  margin: 20px auto 17px
-
-h3
-  +bold-font
-  color: $purple
-  margin: 0 0 15px
-
-p
-  +reg-font
-  color: $dark-grey
-  line-height: 1.4
-  margin: 0 0 15px
-
-ul
-  list-style-type: none
-  margin: 0
-  padding: 0
-
-.wrapper
-  +clearfix
+.container
+  +size (190 235)
+  margin: 30% auto
   position: relative
-  width: 96%
-  margin: auto
-  // responsive prep
-  max-width: 960px
-  min-width: 960px
 
-.content
-  +border-radius-bottom
-  box-shadow: 0 1px 3px rgba($dark, .3)
-  background: white
-  padding: 50px
+.bird, .body, .legs
 
-  p
-
-    &:last-child
-      margin: 0
-
-header
-  +clearfix
-  +linear-gradient (#E2EAEE, #FCFDFD)
-  +size (100% auto)
-  margin: 0 0 50px
-  padding: 15px 0 0
-
-hr
-  height: 1px
-  background: rgba($dark, .2)
-  border: none
-  margin: 25px 0
-
-.home-logo
-  +hide-text
-  +retina-image (/images/home-logo, 100%)
-  +size (550 86)
-  margin: 0 0 25px
-
-.logo
-  +retina-image (/images/logo, 100%)
-  +size (135 21)
-  +hide-text
-  float: left
-  margin: 0 0 15px
-
-.log-in
-  float: right
-
-a
-  color: $link
-  text-decoration: none
-  +bold-font
-
-nav
-  +clearfix
-  float: right
-  width: 80%
+.bird
+  +size (190 235)
+  +animation (bird $timing+15 ease-in-out infinite alternate)
   position: relative
-  font-size: 14px
-  top: 3px
+  z-index: 999
 
-  ul
-    float: left
-    margin: 0
-
-.button
-  +border-radius
-  +linear-gradient ($light-purple, $purple)
-  color: white
-  text-shadow: 0 -1px 1px rgba(0,0,0,.8)
-  box-shadow: 0 1px 1px rgba(#300630,.6)
-  padding: 6px 10px
-
-.bg-cover
-  +linear-gradient (white, $light-grey)
-  +size (100% 820px)
-  position: absolute
-  top: 0
-  z-index: -1
-
-.people
-  +retina-image (/images/people, 100%)
-  +transform (scale(1.8))
-  +size (385 500)
-  position: absolute
-  z-index: -1
-  opacity: .4
-  top: 160px
-  right: 156px
-
-nav, footer
-  text-transform: uppercase
-
-  li
-    display: inline-block
-    margin: 0 20px 0 0
-
-    &:last-child
-      margin: 0
-
-  a
-    color: $dark
-    opacity: .5
-    text-shadow: 0 1px 0 white
-    +transition (opacity .3s)
-
-    &:hover
-      opacity: 1
-
-.gradient-line
-  +size (100% 5)
-  +linear-gradient (90deg, $green 0%, $blue 50%, $purple 100%)
-
-footer
-  padding: 16px 0
-  font-size: 10px
-
-.social-media
-  +clearfix
-  float: left
-  margin: 0 0 0 156px
-  font-size: 54px
-
-  a
-    +entypo
-
-  div
-    float: left
-    margin: 0 20px 0 0
-
-.tos
-  float: left
-  margin: 30px 0 0 0
-
-.footer-links
-  float: right
-  margin: 30px 0 0 0
-
-.home-banner
-  line-height: 1.4
-  box-shadow: 0 1px 3px rgba($dark, .3)
-  background: white
-  padding: 40px 0 25px
-
-  span
-    color: $purple
-    +bold-font
-
-  h3
-    +reg-font
-    color: $dark
-
-.question
-  text-decoration: underline
-
-.back-to-top
-  margin: 0 0 45px
-  display: block
-
-  &:last-child
-    margin: 0
-
-.chart
-  +clearfix
-  margin: 0 0 30px
-
-  &:last-child
-    margin: 0
-
-  h3
-    text-align: center
-    color: $dark
-
-  p
-    margin: 0
-
-  span
-    font-size: 10px
-    position: relative
-    bottom: 8px
-
-
-.media, .amount
-  width: 49%
-  margin: 0 0 15px
-
-.media
-  margin-right: .5%
-  float: left
-  text-align: right
-
-.amount
-  +reg-font
-  margin-left: .5%
-  text-align: left
-  float: right
-
-.fine-print
-  font-size: 12px
-
-.glen
-  +border-radius
-  float: left
-  width: 150px
-  margin: 0 25px 0 0
-
-.commitment-header
-  +size (100% 445px)
-  +retina-image (/images/commitment_bg, 100%)
-  margin: -50px 0
+.body
+  +size (190 235)
+  +retina-image (/images/body, 100%)
+  +animation (body $timing ease-in-out infinite alternate)
+  position: relative
+  z-index: 999
   background-repeat: no-repeat
 
-.commitment-chart
-  +clearfix
-  +linear-gradient (#E2EAEE, #FCFDFD)
-  box-shadow: 0 1px 3px rgba($dark, .3)
-
-  h3
-    text-transform: uppercase
-
-.beliefs
-  +clearfix
-
-.belief
-  padding: 50px
-  width: 33.333%
-  float: left
-
-  &:first-child
-    padding: 50px
-    border-right: 1px solid rgba($dark, .2)
-
-  &:last-child
-    padding: 50px
-    border-left: 1px solid rgba($dark, .2)
-
-.tagline
-  +reg-font
-  text-align: center
-  border-top: 1px solid rgba($dark, .2)
-  width: 100%
-
-  span
-    +bold-font
-
-.price-block
-  +linear-gradient ($dark-grey, $grey)
-  text-shadow: 0 1px 2px rgba(0,0,0, .2)
-  color: white
-  padding: 25px 0 10px
-
-  &.gold
-    +linear-gradient (90deg, $purple, $light-purple)
-
-  h3
-    text-transform: uppercase
-    color: white
-
-  .gradient-line
-    margin: -25px 0 20px
-
-.prices
-  +clearfix
-
-.fee
-  float: left
-  text-align: center
-  width: 25%
-  padding: 0 2px
-
-  &:first-child
-    padding: 0 2px 0 0
-
-  &:last-child
-    padding: 0 0 0 2px
-
-  p
-    background: $light-grey
-    padding: 12px 8px 9px
-    margin: 0 0 1px
-    text-align: left
-
-.price
-  font-size: 54px
-
-.discounts
-  margin: 4px 0
-  padding: 12px
-  text-align: center
-  background: $light-grey
-
-  h3, p
-    margin: 0
-
-.plan-option
-  margin: 4px 0
-
-  &:last-child
-    margin: 4px 0 10px
-
-  p
-    background: $light-grey
-    padding: 12px 16px 10px
-
-.plan-option-header
-  +clearfix
-  +linear-gradient (-90deg, $dark-grey, $grey)
-  text-shadow: 0 1px 2px rgba(0,0,0, .2)
-  padding: 8px 15px 7px
-
-  span
-    text-decoration: underline
-
-.plan-option-title
-  float: left
-
-  h3
-    color: white
-    margin: 0
-
-.plan-option-price
-  float: right
-
-  h3
-    color: white
-    margin: 0
-
-form.invites
-
-.home-invitation
-  width: 550px
-  margin: 0 0 50px
-
-  h1
-    color: $dark
-    margin: 0 0 50px
-
-.pricing-invitation
-  width: 550px
-  margin: 0 auto 50px
-
-  h2
-    margin: 0 auto 17px
-
-.thanks
-  +transition (opacity .5s)
-  position: relative
-  z-index: 0
-  opacity: 0
-  text-align: center
-
-  &.show
-    opacity: 1
-
-input[type=email]
-  +appearance (none)
-  +transition (border .3s, box-shadow .3s)
-  +border-radius
-  display: block
-  box-shadow: 0 1px 3px rgba(0,0,0,.1)
-  font-size: 18px
-  width: 100%
-  color: $dark
-  outline: none
-  border: 1px solid $light-grey
-  border-bottom: 1px solid $grey
-  padding: 30px 18px 8px
-  margin: 0 0 28px
-  +placeholder
-    color: rgba($dark,.2)
-
-  &:focus
-    border: 1px solid $green
-    box-shadow: 0 0 8px 1px rgba($green,.5)
-
-input[type=submit]
-  +transition (opacity .5s)
-  position: relative
-  z-index: 1
-  display: block
-  width: 100%
-  margin: -25px 0 18px
-  border: none
-
-  &.hide
-    opacity: 0
-
-label
-  color: $dark
-  font-size: 14px
-  +bold-font
-  margin: 0 15px 0 0
-
-.field-with-errors
-  input
-    +animation (shake .75s linear)
-    border: 1px solid $red !important
-    box-shadow: 0 0 6px rgba($red,.4) !important
-
-  label
-    +animation (shake .75s linear)
-    border: none
-    box-shadow: none
-
-.input-container
-  position: relative
-  +clearfix
-
-.text-input-label
+.wing
+  +size (77 69)
+  +retina-image (/images/wing, 100%)
+  +animation (flap $timing ease-in-out infinite alternate)
+  -webkit-transform-origin: 0 60%
+  background-repeat: no-repeat
   position: absolute
-  z-index: 999
-  top: 10px
-  left: 20px
+  right: 10px
+  top: 88px
 
-.form-email
-  width: 100%
-  padding: 30px 18px 8px
+.legs
+  +size (70 42)
+  +retina-image (/images/leg, 100%)
+  +animation (leg $timing ease-in-out infinite alternate)
+  background-repeat: no-repeat
+  position: absolute
+  left: 4px
+  bottom: 18px
 
-+keyframes (shake)
-  0%, 100%
-    +transform (translateX(0))
-  10%, 30%, 50%, 70%, 90%
-    +transform (translateX(-6px))
-  20%, 40%, 60%, 80%
-    +transform (translateX(6px))
+.cloud
+  +retina-image (/images/cloud, 100%)
+  +size (163 131)
+  background-repeat: no-repeat
+  opacity: 0
+  position: absolute
+  left: 150px
+  bottom: 0px
+
+.far
+  +animation (cloud-far 10s linear infinite)
+  +animation-delay (1.5s)
+  z-index: -900
+  bottom: 100px
+
+.near
+  +animation (cloud-near 5s linear infinite)
+  +animation-delay (5.5s)
+  z-index: -800
+
+.high
+  +animation (cloud 6s linear infinite)
+  position: absolute
+  left: 100px
+  bottom: 300px
+
+.low
+  +animation (cloud 5s linear infinite)
+  +animation-delay (3s)
+  position: absolute
+  left: 0
+  top: 50px
+
++keyframes (flap)
+  0%
+    +transform (rotateY(0deg))
+  100%
+    +transform (rotateY(180deg) rotate(38deg))
+
++keyframes (body)
+  0%
+    +transform (rotate(0deg))
+  100%
+    +transform (rotate(1deg) translateY(-2px) translateX(1px))
+
++keyframes (leg)
+  0%
+    +transform (rotate(0deg))
+  100%
+    +transform (rotate(-1deg) translateX(2px))
+
++keyframes (bird)
+  0%
+    +transform (rotate(0deg))
+  20%
+    +transform (rotate(-3deg))
+  40%
+    +transform (rotate(-1deg))
+  60%
+    +transform (rotate(-4deg))
+  80%
+    +transform (rotate(-2deg))
+  100%
+    +transform (rotate(0deg))
+
++keyframes (cloud)
+  0%
+    +transform (translateX(-600px) translateY(400px))
+  10%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    +transform (translateX(600px) translateY(-400px))
+
++keyframes (cloud-near)
+  0%
+    +transform (scale(1.2) translateX(-600px) translateY(400px))
+  10%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    +transform (scale(1.2) translateX(600px) translateY(-400px))
+
++keyframes (cloud-far)
+  0%
+    +transform (scale(.5) translateX(-1200px) translateY(800px))
+  10%
+    opacity: 0
+  50%
+    opacity: 0.6
+  100%
+    +transform (scale(.4) translateX(1200px) translateY(-800px))
