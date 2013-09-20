@@ -7,18 +7,16 @@ $timing: .4s
   +box-sizing (border-box)
 
 body
-  background: lightskyblue
+  background: #155a7e
 
 .container
   +size (190 235)
   margin: 30% auto
   position: relative
 
-.bird, .body, .legs
-
 .bird
   +size (190 235)
-  +animation (bird $timing+15 ease-in-out infinite alternate)
+  +animation (bird 18s ease-in-out infinite alternate)
   position: relative
   z-index: 999
 
