@@ -1,16 +1,28 @@
 ---
-title: Fly little bird!
+title: Gliding Labels
 ---
-.container
-  .bird
-    .body
-    .wing
-    .legs
-  .cloud.high.far
-  .cloud.low.near
-  .cloud.high.near
-  .cloud.low.far
-  .cloud.low
-  .cloud.far
-  .cloud.near
-  .cloud.high
+
+.wrapper
+  form.signup-form validate="" action="" method="post" name="signup-form"
+
+    .input-container
+      input.text-input type="text" name="firstName" placeholder="First Name" autocomplete="off" required=""
+      label.text-input-label for="firstName" First Name
+
+    .input-container
+      input.text-input type="text" name="lastName" placeholder="Last Name" autocomplete="off" required=""
+      label.text-input-label for="lastName" Last Name
+
+    .input-container
+      input.text-input type="email" name="email" placeholder="Email" autocomplete="off" spellcheck="false" required=""
+      label.text-input-label for="email" Email
+
+    .input-container
+      input.text-input type="text" name="username" placeholder="Username" autocomplete="off" required=""
+      label.text-input-label for="username" Username
+
+    .input-container
+      input.text-input type="password" name="password" placeholder="Password" required=""
+      label.text-input-label for="text" Password
+
+    button.submit type="submit" Submit
